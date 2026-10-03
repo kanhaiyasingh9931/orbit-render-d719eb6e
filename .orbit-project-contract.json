@@ -1,0 +1,54 @@
+{
+  "version": "1",
+  "createdAt": "2026-10-03T18:08:06.382Z",
+  "architectureType": "FRONTEND",
+  "framework": "React + Vite",
+  "frontendStructure": ".",
+  "backendStructure": "none",
+  "packageManager": "npm",
+  "packageJsonLocations": [
+    "package.json"
+  ],
+  "database": "none",
+  "resolvedRequirements": [
+    "Build a complete modern Kanban Task Board web application using React with TypeScript and Vite",
+    "Requirements: 1",
+    "Kanban board with columns: To Do, In Progress, Review, Done",
+    "Ability to create, edit, delete, and move tasks across columns",
+    "Task priority badges (Low, Medium, High, Urgent) and tags/labels",
+    "Search input and filter by priority/column",
+    "Metrics summary dashboard cards showing total tasks, completion percentage, and tasks by priority",
+    "LocalStorage persistence so tasks are preserved on page reload",
+    "Dark and Light theme toggle",
+    "Interactive UI with modal dialogs for task details and creation"
+  ],
+  "requiredPaths": [
+    "package.json"
+  ],
+  "entrypoints": {
+    "frontend": "./index.html"
+  },
+  "buildCommand": "npm run build",
+  "startCommand": "npx -y serve@latest dist -p 3000",
+  "runtimeRequirements": "Node.js 18+, port 3000",
+  "requiredCapabilities": {
+    "nativeBuildSupported": false,
+    "packageManager": "npm",
+    "operatingSystem": "linux",
+    "networkAvailable": true,
+    "pythonAvailable": false,
+    "makeAvailable": false,
+    "gccAvailable": false,
+    "gppAvailable": false,
+    "nodeGypAvailable": false
+  },
+  "dependencyPolicy": {
+    "allowed": [],
+    "forbidden": [],
+    "nativeDepsAllowed": false
+  },
+  "planSummary": "PROJECT CLASSIFICATION: INTERACTIVE_FRONTEND\nARCHITECTURE: Client-side Single Page Application (SPA) built with React and Vite. State management will be handled via React Context API combined with a custom hook for LocalStorage synchronization. The UI will be component-driven, utilizing a modern drag-and-drop library for board interactions, and Tailwind CSS for responsive, themeable styling.\nFEATURES:\n- Four-column Kanban board (To Do, In Progress, Review, Done)\n- Task CRUD operations (Create, Read, Update, Delete)\n- Drag-and-drop task movement between columns\n- Task priority assignment (Low, Medium, High, Urgent) with visual badges\n- Custom tags/labels for tasks\n- Real-time search input and priority/column filtering\n- Metrics dashboard displaying total tasks, completion percentage, and priority distribution\n- Persistent state using browser LocalStorage\n- System-aware Dark/Light theme toggle\n- Interactive modal dialogs for task creation and detailed viewing\nUSER FLOWS:\n- Initial Load: User opens the app, state is hydrated from LocalStorage, and the dashboard/board is rendered.\n- Task Creation: User clicks 'Add Task', a modal opens, user fills in title, description, priority, and tags, then saves. The task appears in the 'To Do' column.\n- Task Management: User drags a task from 'To Do' to 'In Progress'. The metrics dashboard instantly updates to reflect the new state.\n- Task Completion: User drags a task to 'Done'. The completion percentage metric increases.\n- Search and Filter: User types in the search bar or selects a priority filter; the board instantly hides non-matching tasks.\n- Theming: User clicks the theme toggle icon; the application instantly switches between dark and light color palettes.\nDATA MODEL:\ntype Priority = 'Low' | 'Medium' | 'High' | 'Urgent'; type Status = 'To Do' | 'In Progress' | 'Review' | 'Done'; interface Task { id: string; title: string; description: string; status: Status; priority: Priority; tags: string[]; createdAt: number; } interface",
+  "runtimeMode": "STATIC",
+  "outputDirectory": "dist",
+  "backendModuleSystem": "ESM"
+}
